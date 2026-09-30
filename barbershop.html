@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop | La Mejor Barbería en Houston, TX</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            500: '#D4AF37',
+                            600: '#AA8C2C',
+                            400: '#E6C657'
+                        },
+                        darkBg: '#111111',
+                        cardBg: '#1A1A1A',
+                        darkBorder: '#2A2A2A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #f3f4f6;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA8C2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-darkBorder transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo / Name -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border-2 border-gold-500 flex items-center justify-center bg-black group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-scissors text-gold-500 text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white">SILVA'S</span>
+                    <span class="text-[10px] tracking-widest text-gold-500 uppercase font-semibold">Barbershop • Houston Texas</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#inicio" class="hover:text-gold-500 transition-colors">Inicio</a>
+                <a href="#local" class="hover:text-gold-500 transition-colors">El Local</a>
+                <a href="#servicios" class="hover:text-gold-500 transition-colors">Cortes & Estilos</a>
+                <a href="#horarios" class="hover:text-gold-500 transition-colors">Horarios</a>
+                <a href="#contacto" class="hover:text-gold-500 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="https://wa.me/13464918182?text=Hola,%20vengo%20desde%20Google%20Maps%20y%20deseo%20agendar%20una%20cita%20en%20Barbershop%20Houston." target="_blank" class="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-300 shadow-lg shadow-gold-500/20 flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-gold-500 focus:outline-none p-2" aria-label="Menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-darkBorder px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-base font-medium text-gray-300 hover:text-gold-500 transition-colors mobile-link">Inicio</a>
+            <a href="#local" class="block text-base font-medium text-gray-300 hover:text-gold-500 transition-colors mobile-link">El Local</a>
+            <a href="#servicios" class="block text-base font-medium text-gray-300 hover:text-gold-500 transition-colors mobile-link">Cortes & Estilos</a>
+            <a href="#horarios" class="block text-base font-medium text-gray-300 hover:text-gold-500 transition-colors mobile-link">Horarios</a>
+            <a href="#contacto" class="block text-base font-medium text-gray-300 hover:text-gold-500 transition-colors mobile-link">Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/13464918182?text=Hola,%20vengo%20desde%20Google%20Maps%20y%20deseo%20agendar%20una%20cita%20en%20Barbershop%20Houston." target="_blank" class="w-full bg-gold-500 hover:bg-gold-600 text-black font-semibold py-3 rounded-xl text-center flex items-center justify-center space-x-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Agendar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:h-[90vh] min-h-[650px] flex items-center justify-center overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="aaa.jpg" class="w-full h-full object-cover object-center filter brightness-40 scale-105 animate-pulse duration-[10000ms]">
+            <!-- <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80" alt="Barbershop interior Houston" class="w-full h-full object-cover object-center filter brightness-40 scale-105 animate-pulse duration-[10000ms]"> -->
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/70 to-darkBg/30"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Google Maps visitor badge -->
+            <div class="inline-flex items-center space-x-2 bg-darkBorder/80 border border-gold-500/40 px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm animate-bounce">
+                <i class="fa-solid fa-location-dot text-gold-500"></i>
+                <span class="text-xs sm:text-sm font-medium tracking-wide text-gray-200">¡Bienvenidos visitantes de Google Maps! • Houston, TX</span>
+            </div>
+            <br>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                El Arte de la Barbería en <span class="gold-gradient">Houston</span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Estilo, precisión y elegancia masculina en un solo lugar. Disfruta de la mejor atención, cortes clásicos, modernos y perfilado de barba de alta gama.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="https://wa.me/13464918182?text=Hola,%20vi%20su%20perfil%20en%20Google%20Maps%20y%20quiero%20chatear%20con%20un%20barbero." target="_blank" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-black font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-xl shadow-gold-500/30 flex items-center justify-center space-x-3 group">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span>Chatear por WhatsApp</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-cardBg hover:bg-darkBorder border border-gold-500/50 hover:border-gold-500 text-white font-medium px-8 py-4 rounded-full text-base transition-all duration-300 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-scissors text-gold-500"></i>
+                    <span>Ver Catálogo</span>
+                </a>
+            </div>
+
+            <!-- Highlights badges -->
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-3xl mx-auto mt-16 pt-12 border-t border-darkBorder/60 text-center">
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl sm:text-3xl font-bold font-serif text-gold-500">4.9 ★</span>
+                    <span class="text-xs text-gray-400 mt-1">Reseñas en Google Maps</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl sm:text-3xl font-bold font-serif text-gold-500">+10 Años</span>
+                    <span class="text-xs text-gray-400 mt-1">Experiencia y Tradición</span>
+                </div>
+                <!-- <div class="col-span-2 md:col-span-1 flex flex-col items-center">
+                    <span class="text-2xl sm:text-3xl font-bold font-serif text-gold-500">KD Cell Repair</span>
+                    <span class="text-xs text-gray-400 mt-1">Reparacion de Celulares</span>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="local" class="py-20 bg-cardBg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 text-xs uppercase font-bold tracking-widest block mb-2">Instalaciones Exclusivas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Conoce Nuestro Local en Houston</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Un ambiente diseñado para el confort masculino, combinando el estilo vintage con la modernidad y la mejor atención personalizada.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <!-- HD Featured Image Card -->
+                <div class="relative group rounded-2xl overflow-hidden shadow-2xl border border-darkBorder bg-black">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80" alt="Exterior e interior de Barbershop Houston" class="w-full h-[380px] sm:h-[450px] object-cover object-center group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/111111/D4AF37?text=Barbershop+Houston'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                        <span class="bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-full w-max mb-2">Sede Principal Houston</span>
+                        <h3 class="text-xl font-serif font-bold text-white">Ambiente Premium & Climatizado</h3>
+                        <p class="text-gray-300 text-sm mt-1">Ubicados estratégicamente con amplio estacionamiento para tu comodidad.</p>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4 p-5 rounded-xl bg-darkBg border border-darkBorder hover:border-gold-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center shrink-0 border border-gold-500/30">
+                            <i class="fa-solid fa-couch text-gold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Zona de Espera VIP</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Disfruta de playstation, revistas especializadas, café espresso o una bebida fría mientras esperas tu turno.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-5 rounded-xl bg-darkBg border border-darkBorder hover:border-gold-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center shrink-0 border border-gold-500/30">
+                            <i class="fa-solid fa-medal text-gold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Barberos Certificados</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Expertos en tendencias norteamericanas, degradados perfectos, texturas y rituales con toalla caliente.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-5 rounded-xl bg-darkBg border border-darkBorder hover:border-gold-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center shrink-0 border border-gold-500/30">
+                            <i class="fa-solid fa-clock text-gold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Atención Rápida y Puntual</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Reserva directamente por WhatsApp para asegurar tu espacio sin esperas innecesarias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-darkBg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 text-xs uppercase font-bold tracking-widest block mb-2">Nuestro Catálogo</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Cortes Populares y Estilos</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Selecciona tu estilo favorito o consúltanos por WhatsApp si deseas una recomendación personalizada para la forma de tu rostro.</p>
+            </div>
+
+            <!-- Haircuts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-darkBorder hover:border-gold-500 transition-all duration-300 flex flex-col group shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Fade Corte de Pelo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/111111/D4AF37?text=Fade'">
+                        <span class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-gold-500 font-bold px-3 py-1 rounded-full text-sm border border-gold-500/30">$35</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white mb-2">Skin Fade Moderno</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">Degradado milimétrico impecable en los costados con acabado texturizado o liso en la parte superior.</p>
+                        </div>
+                        <a href="https://wa.me/13464918182?text=Hola,%20me%20interesa%20reservar%20cita%20para%20el%20corte%20Skin%20Fade." target="_blank" class="w-full bg-darkBg hover:bg-gold-500 hover:text-black text-gold-500 border border-gold-500 font-semibold py-2.5 rounded-xl text-center text-sm transition-all duration-300 flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Reservar Estilo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-darkBorder hover:border-gold-500 transition-all duration-300 flex flex-col group shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80" alt="Pompadour Clásico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/111111/D4AF37?text=Pompadour'">
+                        <span class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-gold-500 font-bold px-3 py-1 rounded-full text-sm border border-gold-500/30">$40</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white mb-2">Pompadour Ejecutivo</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">Estilo clásico de alta gama con volumen superior y raya marcada. Ideal para hombres de negocios.</p>
+                        </div>
+                        <a href="https://wa.me/13464918182?text=Hola,%20me%20interesa%20reservar%20cita%20para%20el%20corte%20Pompadour." target="_blank" class="w-full bg-darkBg hover:bg-gold-500 hover:text-black text-gold-500 border border-gold-500 font-semibold py-2.5 rounded-xl text-center text-sm transition-all duration-300 flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Reservar Estilo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-darkBorder hover:border-gold-500 transition-all duration-300 flex flex-col group shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Crop Texturizado" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/111111/D4AF37?text=Crop+Texturizado'">
+                        <span class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-gold-500 font-bold px-3 py-1 rounded-full text-sm border border-gold-500/30">$35</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white mb-2">French Crop Texturizado</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">Flequillo corto hacia adelante con textura marcada y costados desvanecidos. Muy fácil de peinar.</p>
+                        </div>
+                        <a href="https://wa.me/13464918182?text=Hola,%20me%20interesa%20reservar%20cita%20para%20French%20Crop." target="_blank" class="w-full bg-darkBg hover:bg-gold-500 hover:text-black text-gold-500 border border-gold-500 font-semibold py-2.5 rounded-xl text-center text-sm transition-all duration-300 flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Reservar Estilo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-darkBorder hover:border-gold-500 transition-all duration-300 flex flex-col group shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512861423872-a721fb5e3eb7?auto=format&fit=crop&w=600&q=80" alt="Barba Perfilada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/111111/D4AF37?text=Barba+Perfilada'">
+                        <span class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-gold-500 font-bold px-3 py-1 rounded-full text-sm border border-gold-500/30">$25</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white mb-2">Ritual de Barba & Toalla</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">Perfilado con navaja, vapor caliente, aceites esenciales nutritivos y bálsamo hidratante.</p>
+                        </div>
+                        <a href="https://wa.me/13464918182?text=Hola,%20me%20interesa%20reservar%20cita%20para%20Ritual%20de%20Barba." target="_blank" class="w-full bg-darkBg hover:bg-gold-500 hover:text-black text-gold-500 border border-gold-500 font-semibold py-2.5 rounded-xl text-center text-sm transition-all duration-300 flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Reservar Estilo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Promo Banner -->
+            <div class="mt-12 bg-gradient-to-r from-cardBg via-darkBorder to-cardBg border border-gold-500/40 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 rounded-2xl bg-gold-500/10 flex items-center justify-center shrink-0 border border-gold-500">
+                        <i class="fa-solid fa-fire text-gold-500 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-white">Combo Full (Corte + Barba + Bebida)</h3>
+                        <p class="text-gray-300 text-sm mt-1">El servicio favorito de nuestros clientes en Houston. Ahorra un 15% reservando en combo.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <span class="text-3xl font-serif font-extrabold text-gold-500">$55</span>
+                    <a href="https://wa.me/13464918182?text=Hola,%20quiero%20reservar%20el%20Combo%20Full%20(Corte%20+%20Barba)." target="_blank" class="bg-gold-500 hover:bg-gold-600 text-black font-bold px-6 py-3 rounded-full text-sm transition-all duration-300 shadow-md">
+                        Reservar Combo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="horarios" class="py-20 bg-cardBg border-t border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-gold-500 text-xs uppercase font-bold tracking-widest block mb-2">Disponibilidad</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Horarios de Atención</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Te esperamos en nuestra sucursal de Houston. Abierto todos los días de la semana.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-darkBg border border-darkBorder rounded-2xl p-8 shadow-2xl">
+                <div class="space-y-4 divide-y divide-darkBorder">
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="font-medium text-gray-200">Lunes - Viernes</span>
+                        <span class="text-gold-500 font-semibold">9:00 AM – 8:00 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-4">
+                        <span class="font-medium text-gray-200">Sábado</span>
+                        <span class="text-gold-500 font-semibold">8:30 AM – 7:00 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-4">
+                        <span class="font-medium text-gray-200">Domingo</span>
+                        <span class="text-gold-500 font-semibold">10:00 AM – 5:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-darkBorder text-center">
+                    <p class="text-xs text-gray-400 mb-4"><i class="fa-solid fa-circle-info text-gold-500 mr-1.5"></i> Horarios especiales en días feriados. Consulta disponibilidad vía WhatsApp.</p>
+                    <a href="https://wa.me/13464918182?text=Hola,%20deseo%20consultar%20disponibilidad%20para%20hoy." target="_blank" class="inline-flex items-center space-x-2 text-gold-500 hover:text-gold-400 font-semibold text-sm transition-colors">
+                        <span>Verificar disponibilidad en vivo</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-darkBg border-t border-darkBorder relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Location details -->
+                <div>
+                    <span class="text-gold-500 text-xs uppercase font-bold tracking-widest block mb-2">Encuéntranos</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">Ubicación en Houston, TX</h2>
+                    
+                    <div class="space-y-6 text-gray-300 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-500 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Dirección Principal</h4>
+                                <!-- <p class="text-sm text-gray-400 mt-0.5">Westheimer Rd, Houston, TX 77056, Estados Unidos</p> -->
+                                <p class="text-sm text-gray-400 mt-0.5">6078 N Fry Rd Ste B, Katy, TX 77449</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-500 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Teléfono / WhatsApp</h4>
+                                <p class="text-sm text-gray-400 mt-0.5">+1 (346) 491-8182</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-500 mt-1">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">¿Llegas por Google Maps?</h4>
+                                <p class="text-sm text-gray-400 mt-0.5">Estacionamiento gratuito disponible en la parte trasera del local.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Síguenos en Redes Sociales</h4>
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/silvabarbershop_24/" target="_blank" class="w-12 h-12 rounded-full bg-cardBg border border-darkBorder hover:border-gold-500 hover:text-gold-500 text-gray-300 flex items-center justify-center transition-all duration-300 shadow-md">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://tiktok.com" target="_blank" class="w-12 h-12 rounded-full bg-cardBg border border-darkBorder hover:border-gold-500 hover:text-gold-500 text-gray-300 flex items-center justify-center transition-all duration-300 shadow-md">
+                                <i class="fa-brands fa-tiktok text-xl"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="w-12 h-12 rounded-full bg-cardBg border border-darkBorder hover:border-gold-500 hover:text-gold-500 text-gray-300 flex items-center justify-center transition-all duration-300 shadow-md">
+                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/13464918182" target="_blank" class="w-12 h-12 rounded-full bg-cardBg border border-darkBorder hover:border-gold-500 hover:text-gold-500 text-gray-300 flex items-center justify-center transition-all duration-300 shadow-md">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed Placeholder / Simulation Card -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-darkBorder p-3 shadow-2xl">
+                    <div class="relative w-full h-[400px] rounded-xl overflow-hidden bg-darkBg flex flex-col items-center justify-center text-center p-6 border border-darkBorder">
+                        <div class="absolute inset-0 opacity-40">
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Mapa Houston" class="w-full h-full object-cover">
+                        </div>
+                        <div class="relative z-10 bg-black/90 p-6 rounded-2xl border border-gold-500/50 backdrop-blur-md max-w-sm">
+                            <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-500 flex items-center justify-center mx-auto mb-3 border border-gold-500">
+                                <i class="fa-solid fa-map-pin text-2xl"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-white mb-1">Barbershop Houston</h3>
+                            <p class="text-xs text-gray-300 mb-4">6078 N Fry Rd Ste B, Katy, TX 77449</p>
+                            <a href="https://www.google.com/maps/place/6078+N+Fry+Rd+Ste+B,+Katy,+TX+77449,+EE.+UU./@29.8607796,-95.721986,909m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8640d7f00a7aaaab:0x492fd0fee8e93b47!8m2!3d29.860775!4d-95.7194111!16s%2Fg%2F11pvctzp81?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="block w-full bg-gold-500 hover:bg-gold-600 text-black font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-all">
+                                Abrir en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 border-t border-darkBorder text-center text-gray-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-serif text-sm font-bold text-white">BARBERSHOP</span>
+                <span>© 2026. Todos los derechos reservados.</span>
+            </div>
+            <p>Diseñado especialmente para visitantes de Google Maps en Houston, TX.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/13464918182?text=Hola,%20vengo%20desde%20el%20enlace%20de%20Google%20Maps%20y%20deseo%20más%20información." target="_blank" aria-label="Chatear por WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-white text-black font-semibold text-xs px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            ¡Chatea con nosotros!
+        </span>
+    </a>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
